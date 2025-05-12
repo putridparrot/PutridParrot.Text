@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PutridParrot.Text", "PutridParrot.Text\PutridParrot.Text.csproj", "{F166265E-BF17-4000-BF9F-10F09CA6B1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PutridParrot.Text.Tests", "PutridParrot.Text.Tests\PutridParrot.Text.Tests.csproj", "{2B5A2AA2-B76E-4FD9-B632-F3872CBC3E31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F166265E-BF17-4000-BF9F-10F09CA6B1F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F166265E-BF17-4000-BF9F-10F09CA6B1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F166265E-BF17-4000-BF9F-10F09CA6B1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F166265E-BF17-4000-BF9F-10F09CA6B1F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5A2AA2-B76E-4FD9-B632-F3872CBC3E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5A2AA2-B76E-4FD9-B632-F3872CBC3E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5A2AA2-B76E-4FD9-B632-F3872CBC3E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5A2AA2-B76E-4FD9-B632-F3872CBC3E31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45C7AEAC-D26C-46D9-925E-57E60D823BE5}
+	EndGlobalSection
+EndGlobal

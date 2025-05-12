@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>13</LangVersion>
+    <Version>1.0.0-alpha</Version>
+    <Authors>Mark Timmings</Authors>
+    <Product>PutridParrot</Product>
+    <Description>String/Text code</Description>
+    <PackageReadmeFile>PutridParrot.Text.png</PackageReadmeFile>
+    <RepositoryUrl>..\README.md</RepositoryUrl>
+    <RepositoryType>https://github.com/putridparrot/PutridParrot.Text.git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\PutridParrot.Text.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,66 @@
+﻿namespace PutridParrot.Text;
+
+public static partial class StringExtensions
+{
+    /// <summary>
+    /// A memory efficient splitter, in that the string is not actually split but an action
+    /// is supplied the original string along with the start and end indicies so no new string
+    /// is created unless required by the action method (i.e. it does it itself)
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="separators"></param>
+    /// <param name="options"></param>
+    /// <param name="action"></param>
+    public static void Split(this string s, string[] separators, StringSplitOptions options, Action<ReadOnlySpan<char>> action) =>
+        Split(s, separators, options, action, s.IndexOfAny);
+
+    public static void Split(this string s, char[] separators, StringSplitOptions options, Action<ReadOnlySpan<char>> action) =>
+        Split(s, separators, options, action, s.IndexOfAny);
+
+    private static void Split<T>(this string s, T[] separators, StringSplitOptions options, 
+        Action<ReadOnlySpan<char>> action, Func<T[], int, int> indexOfAny)
+    {
+        ArgumentNullException.ThrowIfNull(action);
+
+        if (s.Length == 0)
+        {
+            IfValidInvokeAction(s, 0, 0, options, action);
+        }
+        else
+        {
+            var current = 0;
+            int next;
+            while ((next = indexOfAny(separators, current)) != -1)
+            {
+                IfValidInvokeAction(s, current, next, options, action);
+                current = next + 1;
+            }
+            if (current <= s.Length)
+            {
+                IfValidInvokeAction(s, current, s.Length, options, action);
+            }
+        }
+    }
+
+    private static void IfValidInvokeAction(string s, int start, int end, 
+        StringSplitOptions options, Action<ReadOnlySpan<char>> action)
+    {
+        var length = end - start;
+        var span = s.AsSpan(start, length);
+
+        if (options == StringSplitOptions.RemoveEmptyEntries)
+        {
+            if (start < end)
+            {
+                if (!span.IsWhiteSpace())
+                {
+                    action(span);
+                }
+            }
+        }
+        else
+        {
+            action(span);
+        }
+    }
+}
