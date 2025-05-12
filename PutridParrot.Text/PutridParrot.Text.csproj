@@ -9,10 +9,10 @@
     <Authors>Mark Timmings</Authors>
     <Product>PutridParrot</Product>
     <Description>String/Text code</Description>
-    <PackageReadmeFile>PutridParrot.Text.png</PackageReadmeFile>
-    <RepositoryUrl>..\README.md</RepositoryUrl>
-    <RepositoryType>https://github.com/putridparrot/PutridParrot.Text.git</RepositoryType>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageIcon>PutridParrot.Text.png</PackageIcon>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/putridparrot/PutridParrot.Text.git</RepositoryUrl>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
