@@ -29,7 +29,7 @@ jobs:
     - name: Create Package
       run: dotnet pack --configuration Release
     - name: Create Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: PutridParrot.Text
         path: /home/runner/work/PutridParrot.Text/PutridParrot.Text/PutridParrot.Text/bin/Release/PutridParrot.Text.*.nupkg
