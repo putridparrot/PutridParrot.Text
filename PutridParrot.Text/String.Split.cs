@@ -35,7 +35,7 @@ public static partial class StringExtensions
 
         if (s.Length == 0)
         {
-            IfValidInvokeAction(s, 0, 0, options, action);
+            InvokeAction(s, 0, 0, options, action);
         }
         else
         {
@@ -43,17 +43,17 @@ public static partial class StringExtensions
             int next;
             while ((next = indexOfAny(separators, current)) != -1)
             {
-                IfValidInvokeAction(s, current, next, options, action);
+                InvokeAction(s, current, next, options, action);
                 current = next + 1;
             }
             if (current <= s.Length)
             {
-                IfValidInvokeAction(s, current, s.Length, options, action);
+                InvokeAction(s, current, s.Length, options, action);
             }
         }
     }
 
-    private static void IfValidInvokeAction(string s, int start, int end, 
+    private static void InvokeAction(string s, int start, int end, 
         StringSplitOptions options, Action<ReadOnlySpan<char>> action)
     {
         var length = end - start;
