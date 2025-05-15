@@ -3,6 +3,7 @@
 namespace PutridParrot.Text.Tests;
 
 [ExcludeFromCodeCoverage]
+[TestFixture]
 public class StringSearchingTests
 {
     [Test]

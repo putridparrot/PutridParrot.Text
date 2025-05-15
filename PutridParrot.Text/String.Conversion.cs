@@ -4,9 +4,20 @@ namespace PutridParrot.Text;
 
 public static partial class StringExtensions
 {
-    public static Stream ToStream(this string str, Encoding encoding) =>
-        new MemoryStream(encoding.GetBytes(str));
+    /// <summary>
+    /// Converts a string to a stream, using the specified encoding
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="encoding"></param>
+    /// <returns></returns>
+    public static Stream ToStream(this string s, Encoding encoding) =>
+        new MemoryStream(encoding.GetBytes(s));
     
-    public static Stream ToStream(this string str) => 
-        ToStream(str, Encoding.UTF8);
+    /// <summary>
+    /// Converts a string to a stream, using UTF8 encoding
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public static Stream ToStream(this string s) => 
+        ToStream(s, Encoding.UTF8);
 }

@@ -3,17 +3,28 @@
 public static partial class StringExtensions
 {
     /// <summary>
-    /// A memory efficient splitter, in that the string is not actually split but an action
-    /// is supplied the original string along with the start and end indicies so no new string
-    /// is created unless required by the action method (i.e. it does it itself)
+    /// A memory efficient splitter, calls the supplied action for each part of the string
+    /// that is not empty, or if the StringSplitOptions.RemoveEmptyEntries is specified
+    /// the action is only called for non empty parts. The action is passed the ReadOnlySpan
+    /// of the part of the string that was split.
     /// </summary>
-    /// <param name="s"></param>
-    /// <param name="separators"></param>
-    /// <param name="options"></param>
-    /// <param name="action"></param>
+    /// <param name="s">This string to split</param>
+    /// <param name="separators">The string separators to split on</param>
+    /// <param name="options">Split options</param>
+    /// <param name="action">The action that is passed the span of the string</param>
     public static void Split(this string s, string[] separators, StringSplitOptions options, Action<ReadOnlySpan<char>> action) =>
         Split(s, separators, options, action, s.IndexOfAny);
 
+    /// <summary>
+    /// A memory efficient splitter, calls the supplied action for each part of the string
+    /// that is not empty, or if the StringSplitOptions.RemoveEmptyEntries is specified
+    /// the action is only called for non empty parts. The action is passed the ReadOnlySpan
+    /// of the part of the string that was split.
+    /// </summary>
+    /// <param name="s">This string to split</param>
+    /// <param name="separators">The character separators to split on</param>
+    /// <param name="options">Split options</param>
+    /// <param name="action">The action that is passed the span of the string</param>
     public static void Split(this string s, char[] separators, StringSplitOptions options, Action<ReadOnlySpan<char>> action) =>
         Split(s, separators, options, action, s.IndexOfAny);
 

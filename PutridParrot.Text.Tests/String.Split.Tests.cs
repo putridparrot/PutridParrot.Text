@@ -1,10 +1,9 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace PutridParrot.Text.Tests;
 
-[TestFixture]
 [ExcludeFromCodeCoverage]
+[TestFixture]
 public class StringSplitTests
 {
     [Test]
@@ -33,7 +32,7 @@ public class StringSplitTests
     public void Split_EmptyString_InvokesActionOnce()
     {
         var called = 0;
-        string.Empty.Split([","], StringSplitOptions.None, s =>
+        string.Empty.Split([","], StringSplitOptions.None, _ =>
         {
             called++;
         });

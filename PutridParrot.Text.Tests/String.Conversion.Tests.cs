@@ -4,6 +4,7 @@ using System.Text;
 namespace PutridParrot.Text.Tests;
 
 [ExcludeFromCodeCoverage]
+[TestFixture]
 public class StringConversionTests
 {
     [Test]

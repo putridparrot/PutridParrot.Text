@@ -7,3 +7,41 @@
 [![GitHub Issues](https://img.shields.io/github/issues/putridparrot/PutridParrot.Text.svg)](https://github.com/putridparrot/PutridParrot.Text/issues)
 
 Various string/text methods
+
+## Convenience methods
+
+**IsNullOrEmpty**
+
+```
+"Hello".IsNullOrEmpty()
+```
+
+**IsNullOrWhiteSpace**
+
+```
+"Hello".IsNullOrWhiteSpace()
+```
+
+## Case based methods
+
+**ToFirstUpper**
+
+```
+var s = "hello".ToFirstUpper();
+Assert.AreEqual("Hello", s);
+```
+
+**ToFirstLower**
+
+```
+var s = "Hello".ToFirstLower();
+Assert.AreEqual("hello", s);
+```
+
+## Conversion based methods
+
+**ToStream**
+
+```
+"hello".ToStream();
+```
